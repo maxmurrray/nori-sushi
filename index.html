@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nori Sushi</title>
+  <link rel="stylesheet" href="https://use.typekit.net/gsr2ndn.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== LANDING PAGE ===== -->
+  <section class="page landing" id="landing">
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="#menu" class="nav-link">OUR MENU</a>
+        <a href="#mastery" class="nav-link">ABOUT</a>
+      </div>
+      <a href="#landing" class="logo">N&#x14d;ri</a>
+      <div class="nav-links">
+        <a href="#" class="nav-link">ORDER NOW</a>
+        <a href="#" class="nav-link">CONTACT</a>
+      </div>
+    </nav>
+
+    <div class="landing-content">
+      <img src="images/landing.jpg" alt="Nori sushi selection" class="landing-image">
+      <h1 class="landing-heading">Elevated Sushi, Refined Experience.</h1>
+    </div>
+
+    <div class="scroll-arrow" id="scrollArrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== SUSHI MASTERY ===== -->
+  <section class="page mastery" id="mastery">
+    <div class="mastery-inner">
+      <div class="mastery-text">
+        <h2 class="mastery-heading">Sushi Mastery</h2>
+        <p>Every piece begins with intention. Our chefs trained in Tokyo bring decades of discipline to a Brooklyn counter — sourcing fish daily, seasoning rice by hand, and treating each plate like it's the only one that matters.</p>
+        <p>We don't cut corners. We cut fish. And we do it with the kind of precision that turns a meal into a memory.</p>
+        <a href="#" class="order-button">ORDER NOW</a>
+      </div>
+      <div class="mastery-image">
+        <img src="images/chef.jpg" alt="Our sushi chef at work">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section class="page menu-page" id="menu">
+    <div class="menu-inner">
+      <h2 class="menu-heading">Our Menu</h2>
+
+      <nav class="menu-tabs">
+        <button class="menu-tab active" data-category="omakase">Omakase</button>
+        <button class="menu-tab" data-category="chimchao">Chimchao</button>
+        <button class="menu-tab" data-category="mains">Mains</button>
+        <button class="menu-tab" data-category="alacarte">A la carte</button>
+        <button class="menu-tab" data-category="beverages">Beverages</button>
+      </nav>
+
+      <div class="menu-content">
+
+        <!-- Omakase -->
+        <div class="menu-section" id="cat-omakase">
+          <div class="menu-section-header">
+            <h3 class="menu-section-title">Omakase Box's</h3>
+            <div class="menu-section-image">
+              <img src="images/menu-hero.jpg" alt="Signature sushi roll">
+            </div>
+          </div>
+
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-item-name">The OG</span>
+              <span class="menu-item-price">$62.00</span>
+              <p class="menu-item-desc">10 Pieces of Chef's Selection Nigiri Sushi plus Sashimi Negi Toro 1/2 roll Snow Crab 1/2 Roll</p>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item-name">The Grand</span>
+              <span class="menu-item-price">$85.00</span>
+              <p class="menu-item-desc">14 Pieces of Premium Chef's Selection Nigiri Sushi plus Sashimi with Uni and Toro</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chimchao -->
+        <div class="menu-section" id="cat-chimchao">
+          <h3 class="menu-section-title">Chimchao</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-item-name">Swungtack</span>
+              <span class="menu-item-price">$22.00</span>
+              <p class="menu-item-desc">10 Pieces of Chef's Selection Nigiri Sushi plus Sashimi Negi Toro 1/2 roll Snow Crab 1/2 Roll</p>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item-name">Munglow</span>
+              <span class="menu-item-price">$19.00</span>
+              <p class="menu-item-desc">10 Pieces of Chef's Selection Nigiri Sushi plus Sashimi Negi Toro 1/2 roll Snow Crab 1/2 Roll</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mains -->
+        <div class="menu-section" id="cat-mains">
+          <h3 class="menu-section-title">Mains</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-item-name">Salmon Teriyaki</span>
+              <span class="menu-item-price">$26.00</span>
+              <p class="menu-item-desc">Grilled Atlantic salmon glazed with house teriyaki, served with steamed rice and seasonal vegetables</p>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item-name">Wagyu Don</span>
+              <span class="menu-item-price">$38.00</span>
+              <p class="menu-item-desc">A5 wagyu beef seared over charcoal, served over seasoned sushi rice with truffle soy</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- A la carte -->
+        <div class="menu-section" id="cat-alacarte">
+          <h3 class="menu-section-title">A la carte</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-item-name">Toro Nigiri</span>
+              <span class="menu-item-price">$14.00</span>
+              <p class="menu-item-desc">Fatty bluefin tuna belly, two pieces</p>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item-name">Uni Nigiri</span>
+              <span class="menu-item-price">$12.00</span>
+              <p class="menu-item-desc">Hokkaido sea urchin, two pieces</p>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item-name">Snow Crab Roll</span>
+              <span class="menu-item-price">$18.00</span>
+              <p class="menu-item-desc">Real snow crab, cucumber, avocado, sesame</p>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item-name">Salmon Sashimi</span>
+              <span class="menu-item-price">$16.00</span>
+              <p class="menu-item-desc">Five pieces of fresh Norwegian salmon</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beverages -->
+        <div class="menu-section" id="cat-beverages">
+          <h3 class="menu-section-title">Beverages</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-item-name">Junmai Daiginjo</span>
+              <span class="menu-item-price">$24.00</span>
+              <p class="menu-item-desc">Premium sake, floral and clean, served chilled</p>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item-name">Yuzu Highball</span>
+              <span class="menu-item-price">$16.00</span>
+              <p class="menu-item-desc">Japanese whisky, yuzu citrus, sparkling soda</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

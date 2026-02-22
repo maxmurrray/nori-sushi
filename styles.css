@@ -1,0 +1,440 @@
+/* ============================================
+   Nori Sushi — Styles
+   ============================================ */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-main: 'arima', sans-serif;
+  --brown: #5B2A2A;
+  --off-white: #F0E8DF;
+  --gold: #C9A96E;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  color: #FFFFFF;
+  line-height: 1.5;
+  background: #0A0A0A;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* --- Full-page sections --- */
+.page {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* The menu section is long — it snaps at the start but
+   allows natural scrolling within */
+.menu-page {
+  min-height: auto;
+  scroll-snap-align: start;
+  overflow: visible;
+}
+
+/* --- Nav --- */
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 28px 40px;
+  background: rgba(50, 50, 50, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link {
+  font-family: var(--font-main);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #FFFFFF;
+}
+
+.logo {
+  font-family: var(--font-main);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
+  border: 2px solid #FFFFFF;
+  padding: 2px 14px;
+  transition: border-color 0.2s ease;
+}
+
+.logo:hover {
+  border-color: #FFFFFF;
+}
+
+/* ===== LANDING ===== */
+.landing {
+  background: #0A0A0A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 100px 40px 80px;
+  text-align: center;
+  width: 100%;
+}
+
+.landing-image {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  object-fit: contain;
+}
+
+.landing-heading {
+  font-family: var(--font-main);
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 36px;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+/* --- Scroll Arrow --- */
+.scroll-arrow {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  color: rgba(255, 255, 255, 0.5);
+  animation: arrow-bounce 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.scroll-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0.9;
+  }
+}
+
+/* ===== SUSHI MASTERY ===== */
+.mastery {
+  background: var(--brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.mastery-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1280px;
+  width: 100%;
+  padding: 80px 80px;
+}
+
+.mastery-heading {
+  font-family: var(--font-main);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+
+.mastery-text p {
+  font-family: var(--font-main);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.order-button {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  border: 1.5px solid #FFFFFF;
+  padding: 16px 40px;
+  margin-top: 20px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.order-button:hover {
+  background: #FFFFFF;
+  color: var(--brown);
+}
+
+.mastery-image {
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.mastery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+/* ===== MENU ===== */
+.menu-page {
+  background: #111111;
+  padding: 80px 0 120px;
+}
+
+.menu-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.menu-heading {
+  font-family: var(--font-main);
+  font-size: 2.25rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #FFFFFF;
+  margin-bottom: 32px;
+}
+
+/* --- Menu Tabs --- */
+.menu-tabs {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #111111;
+}
+
+.menu-tab {
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.menu-tab:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.menu-tab.active {
+  color: #FFFFFF;
+}
+
+/* --- Menu Sections --- */
+.menu-section {
+  margin-bottom: 56px;
+}
+
+.menu-section-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.menu-section-image {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.menu-section-image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.menu-section-title {
+  font-family: var(--font-main);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+
+/* --- Menu Grid --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 60px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item-name {
+  font-family: var(--font-main);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.menu-item-price {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 4px;
+}
+
+.menu-item-desc {
+  font-family: var(--font-main);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav {
+    gap: 20px;
+    padding: 20px 20px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 0.6875rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    padding: 4px 12px;
+  }
+
+  .landing-content {
+    padding: 90px 20px 60px;
+  }
+
+  .landing-heading {
+    font-size: 1.375rem;
+  }
+
+  .mastery-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 100px 24px 60px;
+  }
+
+  .mastery-heading {
+    font-size: 2rem;
+  }
+
+  .menu-inner {
+    padding: 0 24px;
+  }
+
+  .menu-tabs {
+    gap: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu-tab {
+    white-space: nowrap;
+  }
+
+  .menu-section-header {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+}
