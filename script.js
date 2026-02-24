@@ -45,41 +45,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Draggable sushi pieces ──
-  const sushis = document.querySelectorAll('.sushi-drag');
+  // ── Draggable sushi pieces in landing image ──
+  const pieces = document.querySelectorAll('.sushi-piece');
+  const wrap = document.querySelector('.landing-image-wrap');
 
-  sushis.forEach(sushi => {
+  pieces.forEach(piece => {
     let isDragging = false;
     let offsetX = 0, offsetY = 0;
 
     const startDrag = (clientX, clientY) => {
       isDragging = true;
-      sushi.classList.add('dragging');
-      const rect = sushi.getBoundingClientRect();
+      piece.classList.add('dragging');
+      const rect = piece.getBoundingClientRect();
+      const wrapRect = wrap.getBoundingClientRect();
       offsetX = clientX - rect.left;
       offsetY = clientY - rect.top;
-      sushi.style.left = rect.left + 'px';
-      sushi.style.top = rect.top + 'px';
-      sushi.style.right = 'auto';
+      // Switch from % to px positioning relative to wrap
+      piece.style.left = (rect.left - wrapRect.left) + 'px';
+      piece.style.top = (rect.top - wrapRect.top) + 'px';
+      piece.style.width = rect.width + 'px';
     };
 
     const moveDrag = (clientX, clientY) => {
       if (!isDragging) return;
-      sushi.style.left = (clientX - offsetX) + 'px';
-      sushi.style.top = (clientY - offsetY) + 'px';
+      const wrapRect = wrap.getBoundingClientRect();
+      piece.style.left = (clientX - wrapRect.left - offsetX) + 'px';
+      piece.style.top = (clientY - wrapRect.top - offsetY) + 'px';
     };
 
     const endDrag = () => {
       isDragging = false;
-      sushi.classList.remove('dragging');
+      piece.classList.remove('dragging');
     };
 
-    sushi.addEventListener('mousedown', (e) => {
+    piece.addEventListener('mousedown', (e) => {
       e.preventDefault();
       startDrag(e.clientX, e.clientY);
     });
 
-    sushi.addEventListener('touchstart', (e) => {
+    piece.addEventListener('touchstart', (e) => {
       const t = e.touches[0];
       startDrag(t.clientX, t.clientY);
     }, { passive: true });
